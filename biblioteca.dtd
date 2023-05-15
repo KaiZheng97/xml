@@ -1,0 +1,55 @@
+<!ELEMENT biblioteca (libros, periodicos, revistas)>
+
+<!ELEMENT libros (libro+)>
+<!--  atributos libro -->
+
+    <!ATTLIST libro id ID #REQUIRED
+     tipo_clase (novela | infantil | didactico) #REQUIRED 
+     numpag CDATA #IMPLIED>
+
+<!--  elementos libro -->
+<!ELEMENT libro (titulolib, indicelib, sipnosislib, capitulos)>
+    <!ELEMENT titulolib (#PCDATA)>
+    <!ELEMENT indicelib (#PCDATA)>
+    <!ELEMENT sipnosislib (#PCDATA)>
+
+<!-- elementos y atributos capitulo-->
+    <!ELEMENT capitulos (capitulo)>
+    <!ELEMENT capitulo (contenido)>
+    <!ATTLIST capitulo titulocap CDATA #REQUIRED
+                        numpag CDATA #IMPLIED>
+    <!ELEMENT contenido EMPTY>
+        <!ATTLIST contenido link CDATA #REQUIRED>
+
+
+<!ELEMENT periodicos (periodico+)>
+   
+<!ELEMENT periodico (seccionP+, indice)>
+    <!ATTLIST periodico id ID #REQUIRED
+                tipo_clase (nacionales | internacionales) #REQUIRED
+                fecha_pub CDATA #IMPLIED>
+    <!ELEMENT seccionP (articulo+)>
+        <!ATTLIST seccionP tiposec ( económica | opinión | deportes | nacional | internaciona) #REQUIRED>
+<!ELEMENT indice (#PCDATA)>
+<!-- contenido ya ha sido declarado arriba-->
+    <!ELEMENT articulo (contenido)>
+        <!ATTLIST articulo autor CDATA #REQUIRED>
+        
+
+
+<!ELEMENT revistas (revista)>
+
+<!ELEMENT revista (titulorev, numrev, indicerev, seccionesrev)>
+
+<!ATTLIST revista id ID #REQUIRED
+            tipo_clase (informatica | corazon | coches | investigacion| otras) #REQUIRED
+            numpag CDATA #IMPLIED>
+
+<!ELEMENT titulorev (#PCDATA)>
+<!ELEMENT numrev (#PCDATA)>
+<!ELEMENT indicerev (#PCDATA)>
+    <!ELEMENT seccionesrev (seccion)>
+        <!ELEMENT seccion (contenidorev)>
+            <!ATTLIST seccion numpag CDATA #REQUIRED>
+            <!ELEMENT contenidorev EMPTY>
+                <!ATTLIST contenidorev link CDATA #REQUIRED>

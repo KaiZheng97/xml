@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE biblioteca [
+<!ELEMENT biblioteca (libros, periodicos, revistas)>
+
+<!ELEMENT libros (libro+)>
+<!--  atributos libro -->
+
+    <!ATTLIST libro id ID #REQUIRED
+     tipo_clase (novela | infantil | didactico) #REQUIRED 
+     numpag CDATA #IMPLIED>
+
+<!--  elementos libro -->
+<!ELEMENT libro (titulolib, indicelib, sipnosislib, capitulos)>
+    <!ELEMENT titulolib (#PCDATA)>
+    <!ELEMENT indicelib (#PCDATA)>
+    <!ELEMENT sipnosislib (#PCDATA)>
+
+<!-- elementos y atributos capitulo-->
+    <!ELEMENT capitulos (capitulo)>
+    <!ELEMENT capitulo (contenido)>
+    <!ATTLIST capitulo titulocap CDATA #REQUIRED
+                        numpag CDATA #IMPLIED>
+    <!ELEMENT contenido EMPTY>
+        <!ATTLIST contenido link CDATA #REQUIRED>
+
+
+<!ELEMENT periodicos (periodico+)>
+   
+<!ELEMENT periodico (seccionP+, indice)>
+    <!ATTLIST periodico id ID #REQUIRED
+                tipo_clase (nacionales | internacionales) #REQUIRED
+                fecha_pub CDATA #IMPLIED>
+    <!ELEMENT seccionP (articulo+)>
+        <!ATTLIST seccionP tiposec (económica | opinión | deportes | nacional | internaciona) #REQUIRED>
+<!ELEMENT indice (#PCDATA)>
+<!-- contenido ya ha sido declarado arriba-->
+    <!ELEMENT articulo (contenido)>
+        <!ATTLIST articulo autor CDATA #REQUIRED>
+        
+
+
+<!ELEMENT revistas (revista)>
+
+<!ELEMENT revista (titulorev, numrev, indicerev, seccionesrev)>
+
+<!ATTLIST revista id ID #REQUIRED
+            tipo_clase (informatica | corazon | coches | investigacion| otras) #REQUIRED
+            numpag CDATA #IMPLIED>
+
+<!ELEMENT titulorev (#PCDATA)>
+<!ELEMENT numrev (#PCDATA)>
+<!ELEMENT indicerev (#PCDATA)>
+    <!ELEMENT seccionesrev (seccion)>
+        <!ELEMENT seccion (contenidorev)>
+            <!ATTLIST seccion numpag CDATA #REQUIRED>
+            <!ELEMENT contenidorev EMPTY>
+                <!ATTLIST contenidorev link CDATA #REQUIRED>
+
+
+
+
+]>
+
+<biblioteca>
+
+    <libros>
+
+        <libro id="L1111" tipo_clase="novela" numpag="100">
+            <titulolib>ASD</titulolib>
+            <indicelib>ASDF</indicelib>
+            <sipnosislib>ASD</sipnosislib>
+            <capitulos>
+                <capitulo titulocap="capitulo 1">
+                     <contenido link="www."/>
+                </capitulo>
+            </capitulos>
+        </libro>
+
+        <libro id="L2222" tipo_clase="infantil" numpag="100">
+            <titulolib>ASDF</titulolib>
+            <indicelib>ASDF</indicelib>
+            <sipnosislib>ASF</sipnosislib>
+            <capitulos>
+            
+                <capitulo titulocap="capitulo 1" numpag="10">
+                    <contenido link="www."/>
+                </capitulo>
+            </capitulos>
+            
+        </libro>
+
+        <libro id="L3333" tipo_clase="didactico"  numpag="10">
+            <titulolib></titulolib>
+            <indicelib></indicelib>
+            <sipnosislib></sipnosislib>
+            <capitulos> 
+                <capitulo titulocap="capitulo 1"  numpag="10">
+                     <contenido link="www."/>
+                </capitulo>
+            </capitulos>
+            
+        </libro>
+    
+    </libros>
+
+    <periodicos> 
+
+        <periodico id="P1234" tipo_clase="nacionales" fecha_pub="25/02/97">
+            <seccionP tiposec="económica">
+                <articulo autor="Rdero">
+                    <contenido link="ww.aaa.com" />
+                </articulo>
+            
+            </seccionP>
+            <indice>Indice 1</indice>
+        
+        
+        
+        
+         </periodico>
+   
+    </periodicos>
+
+    <revistas>
+      
+        <revista id="R1111" tipo_clase="informatica" numpag="100">
+            <titulorev>Revista 1</titulorev>
+            <numrev>113</numrev>
+            <indicerev>Indice1 </indicerev>
+            <seccionesrev>
+                <seccion numpag="10">
+                <contenidorev link="www.contenido.es" />
+                </seccion>
+            </seccionesrev>
+        
+        </revista>     
+
+        
+    </revistas>
+
+
+
+</biblioteca>
