@@ -25,7 +25,7 @@
                                                     <complexType>
                                                             <sequence> 
 
-                                                                    <element name="capitulo">
+                                                                    <element name="capitulo" maxOccurs="unbounded">
                                                                             <complexType>
                                                                                 <sequence>             
                                                                                         <element name="contenido"> 
@@ -66,7 +66,7 @@
                     <complexType>
                             <sequence>
                                 <!-- Empieza aqui lo de periodico-->
-                                <element name="periodico">
+                                <element name="periodico" maxOccurs="unbounded">
                                     <complexType>
                                         <!-- Empieza aqui los ELEMENTOS de periodico-->
                                         <sequence>
@@ -74,7 +74,7 @@
                                             <element name="seccionP"> 
                                                 <complexType>
                                                     <sequence>
-                                                        <element name="articulo">
+                                                        <element name="articulo" maxOccurs="unbounded">
                                                             <complexType>
                                                                 <!-- Elemento dentro de articulo-->
                                                                 <sequence> 
@@ -120,7 +120,7 @@
                         <element name ="revistas">
                             <complexType>
                                 <sequence>
-                                    <element name="revista">
+                                    <element name="revista" maxOccurs="unbounded" >
                                         <complexType>
                                             <sequence>
                                                 <!-- Elementos de revistas-->
@@ -132,7 +132,7 @@
                                                             <complexType>
                                                                 <sequence>
                                                                     <!-- definicion dentro de elemento seccion-->
-                                                                    <element name="seccion">
+                                                                    <element name="seccion" maxOccurs="unbounded">
                                                                         <complexType>
                                                                                 <sequence>
                                                                                     <element name="contenido">
