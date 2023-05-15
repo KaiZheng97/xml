@@ -85,7 +85,7 @@
 
                                                                     </element>
                                                                 </sequence>
-                                                                <attribute name="autor" type="string"></attribute>
+                                                                <attribute name="autor" type="string" use="required"></attribute>
                                                             </complexType>
                                                         
                                                         </element>
@@ -94,7 +94,7 @@
                                                 </sequence>
 
                                                 <!-- atributos seccionP-->
-                                                <attribute name="tiposec" type="string"></attribute>
+                                                <attribute name="tiposec" type="string" use="optional"></attribute>
                                             </complexType>
                                             </element>
                                             <!--elemento 2-->
@@ -137,7 +137,7 @@
                                                                                 <sequence>
                                                                                     <element name="contenido">
                                                                                         <complexType>
-                                                                                            <attribute name="link" type="string"></attribute>
+                                                                                            <attribute name="link" type="string" ></attribute>
                                                                                         </complexType>
                                                                                     </element>
                                                                                 </sequence>
@@ -159,15 +159,6 @@
                             </complexType>
                         
                         </element>
-            
-            
-            
-            
-
-
-
-
-
             </sequence>
         </complexType>
     </element>
