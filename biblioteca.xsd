@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- declaracion del namespace-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+        <!-- declaracion de elemento raiz-->
+    <xs:element name="biblioteca">
+
+    
+        
+    </xs:element>
+    <xs:element name="libro"></xs:element>
+</xs:schema>
